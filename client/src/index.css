@@ -1,6 +1,7 @@
 body {
   margin: 0;
   height: 100vh;
+  font-family: Helvetica, sans-serif;
 }
 
 #root, .app{
@@ -58,4 +59,23 @@ a:visited{
 .app > nav .right {
   display: flex;
   justify-content: flex-start;
+}
+
+.app .products-page h1{
+  text-align: center;
+}
+
+.products-list{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.products-list > .product{
+  display: flex;
+  gap: 24px;
+  border: 1px solid gray;
+  padding: 12px;
+  align-items: center;
+  border-radius: 12px;
 }

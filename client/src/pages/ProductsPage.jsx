@@ -27,12 +27,20 @@ function ProductsPage() {
     }, [])
 
     return (
-        <div>ProductsPage
+        <div className='products-page'>
+            <h1>Available Products</h1>
 
-            {products.map((product) => (
-                <Link to={`/products/${product._id}`} key={product._id}> {product.name} </Link>
-            ))}
-
+            <ul className='products-list'>
+                {products.map((product) => (
+                    <li className='product' key={product._id}>
+                        <Link to={`/products/${product._id}`}> {product.name} </Link>
+                        <div className='actions'>
+                            <button>See Details</button>
+                            <button>Add To Cart</button>
+                        </div>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }
