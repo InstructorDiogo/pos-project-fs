@@ -6,6 +6,7 @@ import SignUpPage from './pages/SignUpPage'
 import ProductsPage from './pages/ProductsPage'
 import AdminDashboardPage from './pages/AdminDashboardPage'
 import ProductDetailsPage from './pages/ProductDetailsPage'
+import CartPage from './pages/CartPage'
 import NavBar from './components/NavBar'
 import IsAnon from './components/IsAnon'
 import IsPrivate from './components/IsPrivate'
@@ -22,6 +23,7 @@ function App() {
         <Route path='/admin-dashboard' element={<IsPrivate> <AdminDashboardPage /> </IsPrivate>} />
         <Route path='/login' element={<IsAnon><LoginPage /></IsAnon>} />
         <Route path='/signup' element={<IsAnon><SignUpPage /></IsAnon>} />
+        <Route path='/cart' element={<IsPrivate> <CartPage /> </IsPrivate>} />
         <Route path='/products' element={<IsPrivate> <ProductsPage /> </IsPrivate>} />
         <Route path='/products/:productId' element={<IsPrivate> <ProductDetailsPage /> </IsPrivate>} />
         <Route path='*' element={<div> 404 Page Not Found </div>} />

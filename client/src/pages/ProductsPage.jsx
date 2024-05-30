@@ -1,10 +1,13 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
+import { CartContext } from '../context/cart.context';
 
 const API_URL = "http://localhost:5005";
 
 function ProductsPage() {
+
+    const { addToCart } = useContext(CartContext)
 
     const getAllProducts = () => {
         // Get the token from the localStorage
@@ -27,7 +30,7 @@ function ProductsPage() {
     }, [])
 
     return (
-        <div className='products-page'>
+        <div className='page products-page'>
             <h1>Available Products</h1>
 
             <ul className='products-list'>
@@ -36,7 +39,7 @@ function ProductsPage() {
                         <Link to={`/products/${product._id}`}> {product.name} </Link>
                         <div className='actions'>
                             <button>See Details</button>
-                            <button>Add To Cart</button>
+                            <button onClick={() => addToCart(product)}>Add To Cart</button>
                         </div>
                     </li>
                 ))}
