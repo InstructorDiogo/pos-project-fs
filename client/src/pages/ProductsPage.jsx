@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const API_URL = "http://localhost:5005";
 
@@ -29,7 +30,7 @@ function ProductsPage() {
         <div>ProductsPage
 
             {products.map((product) => (
-                <div key={product._id}> {product.name} </div>
+                <Link to={`/products/${product._id}`} key={product._id}> {product.name} </Link>
             ))}
 
         </div>
